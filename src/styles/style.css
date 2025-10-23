@@ -1,0 +1,16 @@
+body {
+  background-color: #000;
+  color: #0d6efd;
+}
+.card {
+  background: rgba(20,20,20,0.9);
+  border: 1px solid rgba(13,110,253,0.15);
+}
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(13,110,253,0.5);
+}
+.price {
+  color: #a3e1ff;
+  font-weight: 700;
+}
