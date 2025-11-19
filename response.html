@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/masterweb/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/masterweb/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masterdrez - E-Commerce</title>
+
+    <!-- Icono -->
+    <link rel="icon" type="image/png" href="https://fridnansen.github.io/masterweb/img/Logo.ico" />
+
+    <!-- RUTA BASE para GitHub Pages -->
+    <base href="/masterweb/" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Archivo principal de React/Vite -->
+    <script type="module" src="/masterweb/src/main.jsx"></script>
+  </body>
+</html>

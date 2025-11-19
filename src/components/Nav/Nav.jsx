@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Nav() {
   const { cart } = useCart();
+  const { isAuthenticated, logout } = useAuth();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
       <div className="container-fluid">
@@ -19,10 +21,26 @@ export default function Nav() {
             <li className="nav-item"><Link className="nav-link" to="/">Productos</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/contact">Contacto</Link></li>
+            {isAuthenticated && (
+              <li className="nav-item"><Link className="nav-link" to="/add-product">Agregar Producto</Link></li>
+            )}
           </ul>
-          <Link className="btn btn-outline-primary" to="/cart">
-            Carrito ({cart.length})
-          </Link>
+          <div className="d-flex">
+            {isAuthenticated ? (
+              <>
+                <Link className="btn btn-outline-primary me-2" to="/cart">
+                  Carrito ({cart.length})
+                </Link>
+                <button className="btn btn-outline-danger" onClick={logout}>
+                  Cerrar Sesión
+                </button>
+              </>
+            ) : (
+              <Link className="btn btn-outline-success" to="/login">
+                Iniciar Sesión
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </nav>
