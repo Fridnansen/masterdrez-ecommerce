@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
 
   const login = (username, password) => {
     // Simulate authentication
-    if (username === "admin" && password === "admin") {
+    if (username === "admin" && password === "1234") {
       const token = "fake-token"; // Simulate token
       localStorage.setItem("token", token);
       setIsAuthenticated(true);

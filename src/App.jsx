@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
-import ItemList from "./components/ItemList/ItemList";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
@@ -20,7 +20,8 @@ export default function App() {
           <Nav />
           <div className="container mt-4">
             <Routes>
-              <Route path="/" element={<ItemList />} />
+              <Route path="/" element={<ItemListContainer />} />
+              <Route path="/category/:category" element={<ItemListContainer />} />
               <Route path="/product/:id" element={<ItemDetailContainer />} />
               <Route
                 path="/cart"
@@ -49,4 +50,3 @@ export default function App() {
     </AuthProvider>
   );
 }
-
